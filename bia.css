@@ -72,9 +72,3 @@ h2 {
         max-height: 50vh;
     }
 }
-@media (device-width: 390px) and (device-height: 844px),
-       (device-width: 430px) and (device-height: 932px) {
-    .slides {
-        max-height: 55vh;
-    }
-}
