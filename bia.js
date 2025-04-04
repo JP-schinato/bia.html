@@ -6,7 +6,7 @@ let slideIndex = 0;
             }
             slideIndex++;
             if (slideIndex > slides.length) { slideIndex = 1; }
-              slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 3000);
         }
         showSlides();
@@ -20,6 +20,7 @@ let slideIndex = 0;
             let diffMinutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
             document.getElementById("contador").innerHTML = `Estamos juntos há ${diffDays} dias, ${diffHours} horas e ${diffMinutes} minutos! 🤍💍`;
         }
+
         function updateCounterConheci() {
             let startDateConheci = new Date("2024-04-06T00:00:00-03:00");
             let today = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"}));
@@ -29,14 +30,10 @@ let slideIndex = 0;
             let diffMinutesConheci = Math.floor((diffTimeConheci % (1000 * 60 * 60)) / (1000 * 60));
             document.getElementById("contadorConheci").innerHTML = `Nos conhecemos há ${diffDaysConheci} dias, ${diffHoursConheci} horas e ${diffMinutesConheci} minutos! 🤍`;
         }
+
         updateCounter();
         updateCounterConheci();
-
-        function atualizarDiariamente() {
-            setInterval(() => {
-                updateCounter();
-                updateCounterConheci();
-            }, 60000);
-        }
-
-        atualizarDiariamente();
+        setInterval(() => {
+            updateCounter();
+            updateCounterConheci();
+        }, 60000);
